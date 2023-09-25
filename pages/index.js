@@ -61,7 +61,7 @@ export default function HomePage() {
 
   const deposit = async() => {
     if (atm) {
-      let tx = await atm.deposit(1);
+      let tx = await atm.calculateCube(5);
       await tx.wait()
       getBalance();
     }
@@ -69,7 +69,7 @@ export default function HomePage() {
 
   const withdraw = async() => {
     if (atm) {
-      let tx = await atm.withdraw(1);
+      let tx = await atm.calculateSumOfFirst5Cubes();
       await tx.wait()
       getBalance();
     }
